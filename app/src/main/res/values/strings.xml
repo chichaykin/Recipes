@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Recipes</string>
+    <string name="type_to_search">type to search recipies</string>
+</resources>

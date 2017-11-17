@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.chichaykin.recipes"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField 'String', 'API_KEY', '\"b549c4c96152e677eb90de4604ca61a2\"'
+        buildConfigField 'String', 'API_HOST', '\"http://food2fork.com/api/\"'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+
+    final RETROFIT_VER = '2.3.0'
+    final OKHTTP_VER = '3.4.1'
+    final ANDROID_SUPPORT = '26.1.0'
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "com.android.support:appcompat-v7:$ANDROID_SUPPORT"
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    compile "com.squareup.retrofit2:retrofit:${RETROFIT_VER}"
+    compile "com.squareup.retrofit2:converter-gson:${RETROFIT_VER}"
+    compile "com.squareup.retrofit2:adapter-rxjava2:${RETROFIT_VER}"
+    compile "com.squareup.okhttp3:okhttp:${OKHTTP_VER}"
+    compile "com.squareup.okhttp3:logging-interceptor:${OKHTTP_VER}"
+
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    // Because RxAndroid releases are few and far between, it is recommended you also
+    // explicitly depend on RxJava's latest version for bug fixes and new features.
+    compile 'io.reactivex.rxjava2:rxjava:2.1.5'
+
+    compile 'com.github.bumptech.glide:glide:4.3.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.3.1'
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+}
