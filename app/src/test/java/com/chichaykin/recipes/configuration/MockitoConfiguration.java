@@ -8,7 +8,8 @@ import org.mockito.internal.stubbing.defaultanswers.ReturnsEmptyValues;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
-public class MockitoConfiguration extends
+@SuppressWarnings("Unused")
+class MockitoConfiguration extends
         DefaultMockitoConfiguration {
     public Answer<Object> getDefaultAnswer() {
         return new ReturnsEmptyValues() {
