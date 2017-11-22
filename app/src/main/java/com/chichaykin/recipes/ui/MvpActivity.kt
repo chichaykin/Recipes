@@ -9,6 +9,7 @@ abstract class MvpActivity<V : MvpView, out P : Presenter<V>> : AppCompatActivit
 
     override fun onResume() {
         super.onResume()
+        @Suppress("UNCHECKED_CAST")
         presenter.attachView(this as V)
     }
 

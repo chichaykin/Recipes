@@ -4,7 +4,6 @@ package com.chichaykin.recipes.network
 import com.chichaykin.recipes.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import okhttp3.Request
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -12,20 +11,20 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class NetworkModule {
 
-    private val AUTHORIZE_INTERCEPTOR = Interceptor { chain ->
+    private val authorizeInterceptor = Interceptor { chain ->
         val request = chain.request()
-        val newRequest: Request
+        val builder = request.url().newBuilder()
 
-        newRequest = request.newBuilder()
-                .addHeader("Content-Type", "application/json")
-                .addHeader("key", BuildConfig.API_KEY)
-                .build()
+        builder.addQueryParameter("key", BuildConfig.API_KEY)
+
+        val url = builder.build()
+        val newRequest = chain.request().newBuilder().url(url).build()
         chain.proceed(newRequest)
     }
 
     fun buildNetworkApi(): RecipeApi {
         val clientBuilder = OkHttpClient.Builder()
-        clientBuilder.networkInterceptors().add(AUTHORIZE_INTERCEPTOR)
+        clientBuilder.networkInterceptors().add(authorizeInterceptor)
 
         if (BuildConfig.DEBUG) {
             val logging = HttpLoggingInterceptor()

@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">Recipes</string>
-    <string name="type_to_search">type to search recipies</string>
+    <string name="type_to_search">type to search recipes</string>
+    <string name="loading">Loading&#8230;</string>
+    <string name="no_list_data">No data</string>
+    <string name="title_activity_detail">Details</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="info">Info</string>
+    <string name="view_instruction">View instruction</string>
+    <string name="view_original">View original</string>
+    <string name="social_rank">Social rank: %.1f</string>
+    <string name="title_web_detail">web activity</string>
 </resources>
