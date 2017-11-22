@@ -7,7 +7,7 @@ It was written mainly in Kotlin and uses Retrofit and RxJava to access web api a
 In the app I use MVP pattern. See apk ![here](/artifacts/app-debug.apk).
 
 
-Screenshoots:
+Screenshots:
 
 ![Screen 1](/artifacts/Recipe2.png)
 ![Screen 1](/artifacts/Recipe3.png)
