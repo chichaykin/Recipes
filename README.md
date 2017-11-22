@@ -1,8 +1,8 @@
 # Recipes
 
-Food application which uses The API is documented here: http://food2fork.com/about/.
+Food application that uses http://food2fork.com/about/.
 
-It was written mainly in Kotlin and uses Retrofit and RxJava to access web api and Glide to achyncronous image loading, caching and resizing.
+It was written mainly in Kotlin and uses Retrofit and RxJava to access web api and Glide to asynchronous image loading, caching and resizing.
 
 In the app I use MVP pattern. See apk ![here](/artifacts/app-debug.apk).
 
