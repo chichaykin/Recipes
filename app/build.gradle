@@ -29,6 +29,10 @@ android {
         targetCompatibility 1.8
         sourceCompatibility 1.8
     }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
 }
 
 dependencies {
@@ -36,6 +40,7 @@ dependencies {
     final RETROFIT_VER = '2.3.0'
     final OKHTTP_VER = '3.4.1'
     final ANDROID_SUPPORT = '26.1.0'
+    final mockito_version = '1.10.19'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
@@ -60,4 +65,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    testCompile "org.mockito:mockito-all:$mockito_version"
 }

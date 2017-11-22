@@ -32,7 +32,7 @@ class MainPresenter(private val recipeApi: RecipeApi) : Presenter<MainView>() {
         Log.e(TAG, "Getting error: " + error)
         savedList = emptyList()
         view?.run {
-            showErrorMessage(error.message!!)
+            showErrorMessage(error.message?: error.toString())
         }
     }
 
