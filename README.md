@@ -1,6 +1,6 @@
 # Recipes
 
-Food application that uses http://food2fork.com/about/.
+Android application that uses http://food2fork.com/about/ and allows to search recipes.
 
 It was written mainly in Kotlin and uses Retrofit and RxJava to access web api and Glide to asynchronous image loading, caching and resizing.
 
