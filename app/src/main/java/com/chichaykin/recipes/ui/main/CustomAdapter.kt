@@ -29,7 +29,7 @@ class CustomAdapter(context: Context)
             .priority(Priority.HIGH)
 
     private val rightIcon: Drawable = ContextCompat.getDrawable(
-            context, R.drawable.ic_keyboard_arrow_right_black_24dp)
+            context, R.drawable.ic_keyboard_arrow_right_black_24dp)!!
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         var view = convertView
